@@ -18,3 +18,15 @@ alias: '33'
 // 创建Profile实例，并且挂载到一个元素上去
 new Profile().$mount('#mount-point')
 # vue.nextTick
+在下次dom更新循环结束之后延迟回调，在修改数据之后立即使用这个方法，获取更新后的dom
+// 
+vm.msg = 'Hello'
+// dom还没更新
+vue.nextTick(function(){
+// dom更新了
+})
+# vue.set
+向响应式对象中添加一个属性，并确保这个新的属性是响应式的，且触发视图更新，它必须用于向
+响应式对象上添加新属性，
+# vue.delete
+删除对象的属性。如果对象是响应式的，确保删除能触发更新视图。这个方法主要用于避开vue不能检测到属性被删除的限制
